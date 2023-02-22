@@ -21,4 +21,4 @@ class CustomUserManager(BaseUserManager):
         return self._create_user(email, username, password)
 
     def create_superuser(self, email, username, password):
-        return self._create_user(email, username, password, is_staff=True, is_superuser=True)
+        return self._create_user(email, username, password, is_staff=True, is_superuser=True),

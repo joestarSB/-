@@ -19,5 +19,6 @@ from authapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('auth/', include('authapp.urls'))
+    path('auth/', include('authapp.urls')),
+    path('', include('main.urls')),
 ]
