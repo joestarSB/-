@@ -19,7 +19,7 @@ def signup(request):
             user.save()
 
             return redirect('index')
-
+        return redirect('login')
     return render(request, template_name='authapp/signup.html', context={
         'form': form
     })
@@ -34,7 +34,7 @@ def login_view(request):
             if user is not None:
                 login(request, user)
                 return redirect('index')
-            return HttpResponse('')
+            return redirect('index')
     return render(request, 'authapp/login.html', context={
         'form': form
     })
