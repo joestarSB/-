@@ -11,6 +11,7 @@
         <a href="{% url 'logout' %}">
             <li align="right"><i class="fas fa-file-signature"></i>Logout</li>
         </a>
+        <h3>{{ request.user.username }}</h3>
         {% else %}
         <a href="{% url 'signup' %}">
             <li align="right"><i class="fas fa-file-signature"></i>SignUp</li>
