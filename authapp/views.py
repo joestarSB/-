@@ -11,7 +11,6 @@ def signup(request):
     if request.method == 'POST':
         if form.is_valid():
             cd = form.cleaned_data
-            print(cd)
             user = User.objects.create_user(
                 username=cd['username'],
                 email=cd['email'],
@@ -29,7 +28,7 @@ def login_view(request):
     if request.method == 'POST':
         if form.is_valid():
             cd = form.cleaned_data
-            user = authenticate(username=cd['username'], password=cd['password'])
+            user = authenticate(username=cd['email'], password=cd['password'])
             if user is not None:
                 login(request, user)
                 return redirect('login')
